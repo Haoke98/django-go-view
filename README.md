@@ -2,6 +2,8 @@
 
 An Django extension for Django and GoView
 
+![](assets/preview.png)
+
 ## Install & Usage
 
 * Install :
@@ -61,7 +63,9 @@ python manage.py migrate goview
   ├── example_package_YOUR_USERNAME_HERE-0.0.1-py3-none-any.whl
   └── example_package_YOUR_USERNAME_HERE-0.0.1.tar.gz
   ```
+
 #### Uploading the distribution archives
+
 * Now that you are registered, you can use twine to upload the distribution packages. You’ll need to install Twine:
   ```shell
   python3 -m pip install --upgrade twine

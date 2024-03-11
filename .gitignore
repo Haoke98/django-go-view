@@ -5,3 +5,4 @@ media
 dist
 build
 django_go_view.egg-info
+/goview/frontend.zip
