@@ -2,3 +2,6 @@ db.sqlite3
 .idea
 goview/frontend
 media
+dist
+build
+django_go_view.egg-info

@@ -21,12 +21,14 @@ INSTALLED_APPS = [
     '.......',
 ]
 ```
+
 * Add the urls
+
 ```python
 from django.urls import path, include, re_path
 
 urlpatterns = [
-  ...
+    ...
 ]
 
 urlpatterns += [
@@ -34,7 +36,9 @@ urlpatterns += [
     re_path(r'^goview/', include('goview.urls', namespace='photologue')),
 ]
 ```
+
 * Sync Your Database
+
 ```shell
 python manage.py migrate goview
 ```
@@ -42,6 +46,34 @@ python manage.py migrate goview
 ## Contribute & Development
 
 * Admin 页面账号和密码统一都是: `go-view` / `go-view`.
+
+### 发布
+
+#### Generating distribution archives
+
+* Make sure you have the latest version of PyPA’s build installed:
+  ```shell
+  python3 -m pip install --upgrade build
+  ```
+* Now run this command from the same directory where pyproject.toml is located:
+  ```shell
+  python3 -m build
+  ```
+  This command should output a lot of text and once completed should generate two files in the dist directory:
+  ```shell
+  dist/
+  ├── example_package_YOUR_USERNAME_HERE-0.0.1-py3-none-any.whl
+  └── example_package_YOUR_USERNAME_HERE-0.0.1.tar.gz
+  ```
+#### Uploading the distribution archives
+* Now that you are registered, you can use twine to upload the distribution packages. You’ll need to install Twine:
+  ```shell
+  python3 -m pip install --upgrade twine
+  ```
+* Once installed, run Twine to upload all of the archives under dist:
+  ```shell
+  python3 -m twine upload --repository testpypi dist/*
+  ```
 
 ## 友情链接
 
