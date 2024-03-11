@@ -1,11 +1,12 @@
 import datetime
+import uuid
 
 from django.db import models
 
 
 # Create your models here.
 class Project(models.Model):
-    id = models.CharField(max_length=100, primary_key=True)
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=255, null=True, blank=False)
     state = models.IntegerField(blank=False, default=-1, db_index=True)
     createTime = models.DateTimeField(auto_now_add=True, db_index=True)
@@ -14,6 +15,7 @@ class Project(models.Model):
     deletedTime = models.DateTimeField(null=True, blank=True, db_index=True)
     cover = models.TextField(null=True, blank=True)
     remarks = models.CharField(max_length=255, null=True, blank=True)
+    content = models.JSONField(null=True, blank=True)
 
     @property
     def is_delete(self):
@@ -27,9 +29,9 @@ class Project(models.Model):
             self.createTime = datetime.datetime.now()
         super(Project, self).save(*args, **kwargs)
 
-    def serialize(self):
-        return {
-            "id": self.id,
+    def serialize(self, with_content: bool = False):
+        res = {
+            "id": str(self.id),
             "projectName": self.name,
             "state": self.state,
             "createTime": self.createTime.strftime("%Y-%m-%d %H:%M:%S"),
@@ -38,3 +40,6 @@ class Project(models.Model):
             "indexImage": self.cover,
             "remarks": self.remarks
         }
+        if with_content:
+            res["content"] = self.content
+        return res
