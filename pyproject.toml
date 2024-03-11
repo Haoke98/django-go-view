@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools >= 61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "django-go-view"
+version = "1.0.0"
+dependencies = [
+    "django>=4.0.0"
+]
+requires-python = ">=3.6"
+authors = [
+    { name = "Sadam·Sadik", email = "Haoke98@outlook.com" }
+]
+maintainers = [
+    { name = "Sadam·Sadik", email = "Haoke98@outlook.com" }
+]
+description = "An Django extension for Django and GoView"
+readme = "README.rst"
+license = { file = "LICENSE" }
+keywords = ['django', 'go-view', 'goview', 'django-go-view', 'screen', "bigscreen", "echarts", "editor"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Information Technology",
+    "License :: OSI Approved :: Apache Software License",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    'Programming Language :: Python :: 3.11',
+    'Programming Language :: Python :: 3.10',
+    'Programming Language :: Python :: 3.9',
+    'Programming Language :: Python :: 3.8',
+    'Programming Language :: Python :: 3.7',
+    'Programming Language :: Python :: 3.6',
+    "Topic :: Scientific/Engineering :: Visualization",
+    "Framework :: Django",
+    "Framework :: Django CMS",
+    ""
+]
+
+[project.urls]
+Homepage = "https://github.com/Haoke98/django-go-view"
+Documentation = "https://github.com/Haoke98/django-go-view/README.md"
+Repository = "https://github.com/Haoke98/django-go-view.git"
+"Bug Tracker" = "https://github.com/Haoke98/django-go-view/issues"
+Changelog = "https://github.com/Haoke98/django-go-view/releases"

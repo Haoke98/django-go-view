@@ -1,4 +1,6 @@
-# Django-GoView
+# Django + GoView
+
+An Django extension for Django and GoView
 
 ## Install & Usage
 
