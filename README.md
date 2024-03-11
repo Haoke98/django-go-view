@@ -51,13 +51,9 @@ python manage.py migrate goview
 
 #### Generating distribution archives
 
-* Make sure you have the latest version of PyPA’s build installed:
-  ```shell
-  python3 -m pip install --upgrade build
-  ```
 * Now run this command from the same directory where pyproject.toml is located:
   ```shell
-  python3 -m build
+  python setup.py sdist bdist_wheel
   ```
   This command should output a lot of text and once completed should generate two files in the dist directory:
   ```shell

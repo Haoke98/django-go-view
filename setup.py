@@ -20,7 +20,7 @@ except ImportError:
 
 setup(
     packages=["goview"],
-    include_package_data=True,
+    package_data={'goview': ['frontend/*']},
     entry_points={
         'console_scripts': [
 
