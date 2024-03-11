@@ -1,4 +1,5 @@
 import json
+import os
 
 from django.http import HttpResponse
 from django.shortcuts import render
@@ -39,4 +40,8 @@ def login(request):
 
 
 def index(request):
-    return render(request, 'index.html')
+    # 指向Vue项目编译后的index.html的文件路径
+    index_file_path = os.path.join(os.path.dirname(__file__), 'frontend', 'index.html')
+    with open(index_file_path, 'r', encoding='utf-8') as f:
+        index_file_content = f.read()
+    return HttpResponse(index_file_content)

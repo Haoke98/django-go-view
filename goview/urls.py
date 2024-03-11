@@ -13,11 +13,14 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.urls import path
+import os
 
-from .views import login,index
+from django.urls import path
+from django.conf.urls.static import static
+from .views import login, index
+
 app_name = 'goview'
 urlpatterns = [
-    path("sys/login", login),
-    path("", index, name="index")
-]
+                  path("sys/login", login),
+                  path("", index, name="index")
+              ] + static("static/", document_root=os.path.join(os.path.dirname(__file__), 'frontend', 'static'))
