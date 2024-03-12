@@ -4,6 +4,11 @@ An Django extension for Django and GoView
 
 ![](assets/preview.png)
 
+## 引导
+
+演示地址: [https://demo.mtruning.club/](https://demo.mtruning.club/)
+
+
 ## Install & Usage
 
 * Install :
